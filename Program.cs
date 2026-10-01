@@ -33,6 +33,7 @@ namespace Laboration3
                 switch (inp)
                 {
                     case '1':
+                    case (int)ConsoleKey.NumPad1:
                         Console.CursorVisible = true;
                         Console.Write("Ange namn: ");
                         string? author = Console.ReadLine();
@@ -47,6 +48,7 @@ namespace Laboration3
                         }
                         break;
                     case '2':
+                    case (int)ConsoleKey.NumPad2:
                         Console.CursorVisible = true;
                         Console.Write("Ange index på inlägg som ska tas bort: ");
                         string? index = Console.ReadLine();
