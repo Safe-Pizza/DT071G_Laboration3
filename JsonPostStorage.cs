@@ -1,4 +1,16 @@
-﻿using System.Text.Json;
+﻿/**
+ * Filnamn: JsonPostStorage.cs
+ * Författare: Hanna Lindkvist
+ * Datum: 2026-10-01
+ * Kurs: DT071G
+ * 
+ * Beskrivning: Publik klass som implementerrar interface IPostStorage. Initierar JsonPostStorage med filnamn som parameter.
+ * Klassen laddar in och sparar Post-objekt i en JSON-fil. 
+ * Klassen använder System.Text.Json för serialisering och deserialisering av Post-objekt.
+ * 
+ * **/
+
+using System.Text.Json;
 
 namespace Laboration3
 {
@@ -10,7 +22,7 @@ public class JsonPostStorage : IPostStorage
         {
             this.filename = filename;
         }
-        public List<Post> load()
+        public List<Post> Load()
         {
             if (!File.Exists(filename))
             {
