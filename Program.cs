@@ -20,23 +20,12 @@ namespace Laboration3
 
             while (true) //Loop som körs tills användaren väljer att avsluta programmet
             {
-                Console.Clear(); //Rensa konsolen
-                Console.CursorVisible = false; //Göm markören
-
-                //Programmets meny
-                Console.WriteLine("H A N N A S  G Ä S T B O K");
-                Console.WriteLine();
-
-                Console.WriteLine("1. Skapa inlägg");
-                Console.WriteLine("2. Ta bort inlägg");
-                Console.WriteLine("X. Avsluta");
-                Console.WriteLine();
-                Console.WriteLine();
+                ShowMenu();
 
                 //Loop för utskrift av alla inlägg i gästboken med index, författare och meddelande
                 foreach (var item in guestbook.GetPosts().Select((post, index) => new { post.Author, post.Message, index }))
                 {
-                    Console.WriteLine($"[{item.index}] {item.Author} : {item.Message} ");
+                    Console.WriteLine($"    [{item.index}] {item.Author} : {item.Message} ");
                 }
 
 
@@ -61,7 +50,7 @@ namespace Laboration3
                             }
                         }
                         break;
-                        //input 2 ta bort inlägg med index som parameter
+                    //input 2 ta bort inlägg med index som parameter
                     case '2':
                     case (int)ConsoleKey.NumPad2:
                         Console.CursorVisible = true;
@@ -82,13 +71,40 @@ namespace Laboration3
                                 Console.ReadKey(true);
                             }
                         }
-                            break;
+                        break;
                     //input X avslutar programmet
                     case 88:
                         Environment.Exit(0);
                         break;
                 }
             }
+        }
+        static void ShowMenu()
+        {
+            Console.Clear(); //Rensa konsolen
+            Console.CursorVisible = false; //Göm markören
+
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+
+            //Programmets meny
+            Console.WriteLine("╔══════════════════════════════════════╗");
+            Console.WriteLine("║            HANNAS GÄSTBOK            ║");
+            Console.WriteLine("╚══════════════════════════════════════╝");
+
+            Console.ForegroundColor = ConsoleColor.White;
+
+            Console.WriteLine("\n     [1]   Skapa inlägg");
+            Console.WriteLine("     [2]   Ta bort inlägg");
+            Console.WriteLine("     [X]   Avsluta");
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.WriteLine("╔══════════════════════════════════════╗");
+            Console.WriteLine("║            SPARADE INLÄGG            ║");
+            Console.WriteLine("╚══════════════════════════════════════╝");
+            Console.WriteLine();
+
+            Console.ForegroundColor = ConsoleColor.White;
         }
     }
 }
