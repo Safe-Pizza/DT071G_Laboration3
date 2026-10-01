@@ -8,8 +8,6 @@
  * 
  * **/
 
-using System;
-
 namespace Laboration3
 {
     public class Post
