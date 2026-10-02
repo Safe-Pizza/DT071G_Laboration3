@@ -15,7 +15,7 @@ namespace Laboration3
     {
         static void Main(string[] args)
         {
-            IPostStorage storage = new JsonPostStorage("C:\\Users\\hanna\\Desktop\\DT071G\\Laboration3\\Laboration3\\posts.json"); //Spara filnamn och sökväg i variabeln
+            IPostStorage storage = new JsonPostStorage("posts.json"); //Här läggs filsökvägen till JSON-filen som ska användas för att spara inlägg i en variabel
             Guestbook guestbook = new Guestbook(storage); //Skapa en instans av klassen Guestbook med storage varibeln som parameter
 
             while (true) //Loop som körs tills användaren väljer att avsluta programmet
